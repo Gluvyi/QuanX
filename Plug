@@ -33,5 +33,11 @@
 
 #百度网盘开启蓝光和倍速
 https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/BaiduCloud.js
+
+#谷歌拼接
+http:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
+https:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
+https:\/\/encrypted\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
+
 [MITM]
-hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com
+hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com, www.google.*, encrypted.google.*

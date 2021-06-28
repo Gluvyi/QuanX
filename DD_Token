@@ -1,0 +1,6 @@
+[rewrite_local]
+#滴滴出行获取token
+  ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?.*city=(\d*)&.*ticket=(.*)& url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/didi.cookie.js
+  ^https?:\/\/bosp-api\.xiaojukeji\.com\/bosp-api\/lottery\/info?.*lid=([^&]*) url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/didi.cookie.js
+ [MITM]
+  hostname = as.xiaojukeji.com, bosp-api.xiaojukeji.com

@@ -39,7 +39,10 @@ http:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.
 https:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
 https:\/\/encrypted\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
 
+#彩云破解
+彩云天气SVIP = type=http-response,requires-body=1,max-size=0,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/CaiYun.js
+
 #Picsew破解
 ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Picsew.js
 [MITM]
-hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com, www.google.*, encrypted.google.*, buy.itunes.apple.com,
+hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com, www.google.*, encrypted.google.*, buy.itunes.apple.com, biz.caiyunapp.com,

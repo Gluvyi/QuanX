@@ -7,6 +7,9 @@
 #Emby解锁高级模式
 ^https:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey) url script-echo-response https://subweb.oss-cn-hongkong.aliyuncs.com/Script/embycrack.js
 
+# 去微信公众号广告 (By Choler)
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
+
 #知乎手机网页优化。(如使用 APP 请勿添加本规则)
 // 先重写到桌面版
 ^https:\/\/www\.zhihu\.com\/(question|topic) url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36$2
@@ -45,4 +48,4 @@ https:\/\/encrypted\.google\..* url script-response-body https://raw.githubuserc
 #Picsew破解
 ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Picsew.js
 [MITM]
-hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com, www.google.*, encrypted.google.*, buy.itunes.apple.com, biz.caiyunapp.com,
+hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com, www.google.*, encrypted.google.*, buy.itunes.apple.com, biz.caiyunapp.com, mp.weixin.qq.com,

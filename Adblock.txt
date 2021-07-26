@@ -532,11 +532,11 @@ hostname = *.amemv.com, *.iydsj.com, *.k.sohu.com, *.kakamobi.cn, *.kingsoft-off
 # > 最右
 ^https?+:\/\/api\.izuiyou\.com\/ad\/ url reject-200
 # > 字节跳动
-#^https?+:\/\/.+?\.pstatp\.com\/img\/ad url reject-200
-#^https?+:\/\/.+?\.(?>amemv|musical|snssdk|tiktokv)\.(?>com|ly)\/(?>api|motor)\/ad\/ url reject-200
-#^https?+:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/ url reject-200
-#^https?+:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ url reject-200
-#^https?+:\/\/.+?\/img\/ad\.union\.api\/ url reject-200
+# ^https?+:\/\/.+?\.pstatp\.com\/img\/ad url reject-200
+# ^https?+:\/\/.+?\.(?>amemv|musical|snssdk|tiktokv)\.(?>com|ly)\/(?>api|motor)\/ad\/ url reject-200
+# ^https?+:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/ url reject-200
+# ^https?+:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ url reject-200
+# ^https?+:\/\/.+?\/img\/ad\.union\.api\/ url reject-200
 # > 涨乐财富通
 ^https?+:\/\/d\.zhangle\.com\/pic\/cft\/interaction\/\d{13}-1242-2248\.jpg url reject-200
 # > 中国大学慕课

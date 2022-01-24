@@ -4,4 +4,6 @@ host-suffix, apis.google.com, direct
 host-suffix, storage.googleapis.com, direct
 host-suffix, analytics.kaggle.io, direct
 host-suffix, www.kaggle.com, direct
-host-suffix, analytics.kaggle.io, direct
+host-suffix, i.postimg.cc, direct
+host-suffix, 142.251.42.240, direct
+host-suffix, 172.217.160.110, direct

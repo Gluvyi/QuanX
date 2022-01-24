@@ -1,0 +1,7 @@
+host-suffix, kkb-production.jupyter-proxy.kaggle.net, direct
+host-suffix, www.kaggleusercontent.com, direct
+host-suffix, apis.google.com, direct
+host-suffix, storage.googleapis.com, direct
+host-suffix, analytics.kaggle.io, direct
+host-suffix, www.kaggle.com, direct
+host-suffix, analytics.kaggle.io, direct

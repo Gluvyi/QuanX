@@ -24,11 +24,11 @@
 
 #CSDN优化
 // 先重写到桌面版
-^https:\/\/blog\.csdn\.net\/ url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36$2
+//^https:\/\/blog\.csdn\.net\/ url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36$2
 // 再注入 CSS 进行优化
-^https:\/\/blog\.csdn\.net\/ url script-response-body https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/betterweb/csdn.res.js
+//^https:\/\/blog\.csdn\.net\/ url script-response-body https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/betterweb/csdn.res.js
 // 免跳转应用商店(也可以直接 filter 屏蔽 openinstall.io) *重写到桌面版后，这条规则基本就没什么用了*
-^https:\/\/wvhzpj\.openinstall\.io\/ulink url script-echo-response https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/betterweb/csdn.req.js
+//^https:\/\/wvhzpj\.openinstall\.io\/ulink url script-echo-response https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/betterweb/csdn.req.js
 
 #微博去广告
 ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
@@ -38,9 +38,9 @@
 https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/BaiduCloud.js
 
 #谷歌拼接
-http:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
-https:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
-https:\/\/encrypted\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
+// http:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
+//https:\/\/www\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
+//https:\/\/encrypted\.google\..* url script-response-body https://raw.githubusercontent.com/Yu1zzZ/QuanX/main/Google.js
 
 #彩云破解
 彩云天气SVIP = type=http-response,requires-body=1,max-size=0,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/CaiYun.js

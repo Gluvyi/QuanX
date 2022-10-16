@@ -54,5 +54,8 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 # 该订阅仅适用于QuantumultX, 用于更新TestFlight App时, 提示"APP不可用"问题. 解除区域限制.
 ^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ url script-request-body https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
 
+# fileball
+^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/\$RCAnonymousID%3A\w{32})$ url script-response-body https://raw.githubusercontents.com/chxm1023/QX/main/Scripts/Fileball.js
+
 [MITM]
-hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com, www.google.*, encrypted.google.*, buy.itunes.apple.com, biz.caiyunapp.com, mp.weixin.qq.com, testflight.apple.com, spclient.wg.spotify.com
+hostname = api.m.jd.com, trade-acs.m.taobao.com, oia.zhihu.com, link.zhihu.com, www.zhihu.com, blog.csdn.net, *.openinstall.io, mb3admin.com, api.weibo.cn,mapi.weibo.com,*.uve.weibo.com, pan.baidu.com, www.google.*, encrypted.google.*, buy.itunes.apple.com, biz.caiyunapp.com, mp.weixin.qq.com, testflight.apple.com, spclient.wg.spotify.com, api.revenuecat.com

@@ -14,4 +14,10 @@ DOMAIN,aaa.ax
 
 # > MisakaF
 DOMAIN,cf3.misakaf.org
-DOMAIN,hk.misakaf.org
+DOMAIN,cdn.misakaf.org
+
+# > Nebula
+DOMAIN,direct.nebula-emby.com
+
+# > Cc
+DOMAIN,cc.ccemby.tk

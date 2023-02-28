@@ -1,29 +1,24 @@
 # > 流媒体卷毛鼠服务器
-DOMAIN-SUFFIX,jmsooo.com
-DOMAIN-SUFFIX,cf.jmsooo.com
-DOMAIN-SUFFIX,ha.jmsooo.com
+DOMAIN-KEYWORD,jmsooo
 
 # > 终点站
-DOMAIN-SUFFIX,pub1.emby.wtf
-DOMAIN-SUFFIX,pub2.emby.wtf
-DOMAIN-SUFFIX,pub3.emby.wtf
-DOMAIN-SUFFIX,pub4.emby.wtf
+DOMAIN-KEYWORD,emby.wtf
+
 
 # > Misty
-DOMAIN-SUFFIX,aaa.ax
+DOMAIN-KEYWORD,aaa.ax
 
 # > MisakaF
-DOMAIN-SUFFIX,cf3.misakaf.org
-DOMAIN-SUFFIX,cdn.misakaf.org
+DOMAIN-KEYWORD,misakaf
 
 # > Nebula
-DOMAIN-SUFFIX,direct.nebula-emby.com
+DOMAIN,direct.nebula-emby.com
 
 # > Cc
-DOMAIN-SUFFIX,cc.ccemby
+DOMAIN-KEYWORD,ccemby
 
 # > Orange
-DOMAIN-SUFFIX,cf.embytv
+DOMAIN-KEYWORD,embytv
 
 # > 不给看
-DOMAIN-SUFFIX,emby.pro
+DOMAIN,emby.pro

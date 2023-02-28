@@ -1,29 +1,29 @@
 # > 流媒体卷毛鼠服务器
-DOMAIN,jmsooo.com
-DOMAIN,cf.jmsooo.com
-DOMAIN,ha.jmsooo.com
+DOMAIN-SUFFIX,jmsooo.com
+DOMAIN-SUFFIX,cf.jmsooo.com
+DOMAIN-SUFFIX,ha.jmsooo.com
 
 # > 终点站
-DOMAIN,pub1.emby.wtf
-DOMAIN,pub2.emby.wtf
-DOMAIN,pub3.emby.wtf
-DOMAIN,pub4.emby.wtf
+DOMAIN-SUFFIX,pub1.emby.wtf
+DOMAIN-SUFFIX,pub2.emby.wtf
+DOMAIN-SUFFIX,pub3.emby.wtf
+DOMAIN-SUFFIX,pub4.emby.wtf
 
 # > Misty
-DOMAIN,aaa.ax
+DOMAIN-SUFFIX,aaa.ax
 
 # > MisakaF
-DOMAIN,cf3.misakaf.org
-DOMAIN,cdn.misakaf.org
+DOMAIN-SUFFIX,cf3.misakaf.org
+DOMAIN-SUFFIX,cdn.misakaf.org
 
 # > Nebula
-DOMAIN,direct.nebula-emby.com
+DOMAIN-SUFFIX,direct.nebula-emby.com
 
 # > Cc
-DOMAIN,cc.ccemby.tk
+DOMAIN-SUFFIX,cc.ccemby
 
 # > Orange
-DOMAIN,cf.embytv.cf
+DOMAIN-SUFFIX,cf.embytv
 
 # > 不给看
-DOMAIN,emby.pro
+DOMAIN-SUFFIX,emby.pro

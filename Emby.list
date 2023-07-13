@@ -7,12 +7,6 @@ DOMAIN-KEYWORD,emby.wtf
 # > Misty
 DOMAIN-KEYWORD,misty
 
-# > MisakaF
-DOMAIN-KEYWORD,misakaf
-
-# > Nebula
-DOMAIN,direct.nebula-emby.com
-
 # > Cc
 DOMAIN-KEYWORD,ccemby
 
@@ -23,5 +17,5 @@ DOMAIN-KEYWORD,embytv
 DOMAIN,emby.pro
 DOMAIN,emby.gtma.top
 
-# > NMG
+# > tree
 DOMAIN,789.123456.al

@@ -6,9 +6,14 @@
 
 #[Rewrite]
 #^https:\/\/eine.bgka\.me\/.* header-add X-Forwarded-For 1.1.1.1
+#^https:\/\/emby\.pro\/.* header-add X-Forwarded-For 1.1.1.1
+#^https:\/\/cf.jmsooo\.com\/.* header-add X-Forwarded-For 1.1.1.1
+
 
 [Script]
 http-request ^https:\/\/eine.bgka\.me\/.* script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = false, tag = Emby Request
+http-request ^https:\/\/emby\.pro\/.* script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = false, tag = Emby Request
+http-request ^https:\/\/cf.jmsooo\.com\/.* script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = false, tag = Emby Request
 
 [MITM]
-hostname = eine.bgka.me
+hostname = eine.bgka.me, emby.pro, cf.jmsooo.com

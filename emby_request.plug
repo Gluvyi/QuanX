@@ -1,5 +1,5 @@
 #!name = Emby Request
-#!desc = 将emby中在iemc上被禁用的服务器更换User-Agent
+#!desc = 在iemc上被禁用的服务器更换User-Agent，使其能够在iemc中正常观看。
 #!openUrl = 
 #!author = Gluvyi
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png

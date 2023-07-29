@@ -5,10 +5,10 @@
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Bing.png
 
 #[Rewrite]
-#^https:\/\/eine\.bgka\.me\/emby.* header-add X-Forwarded-For 1.1.1.1
+#^https:\/\/eine.bgka\.me\/.* header-add X-Forwarded-For 1.1.1.1
 
 [Script]
-http-request ^https:\/\/eine\.bgka\.me\/emby.* script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = false, tag = Emby Request
+http-request ^https:\/\/eine.bgka\.me\/.* script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = false, tag = Emby Request
 
 [MITM]
 hostname = eine.bgka.me

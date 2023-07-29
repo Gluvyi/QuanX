@@ -5,7 +5,7 @@
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Bing.png
 
 #[Rewrite]
-#^https:\/\/www\.bing\.com\/(search|new) header-add X-Forwarded-For 1.1.1.1
+#^https:Weine.bgka\.meV* header-add X-Forwarded-For 1.1.1.1
 
 [Script]
 http-request ^https:Weine.bgka\.meV* script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = false, tag = Emby Request

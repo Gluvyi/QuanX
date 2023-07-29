@@ -2,7 +2,7 @@
 #!desc = 将emby中在iemc上被禁用的服务器更换User-Agent
 #!openUrl = 
 #!author = Gluvyi
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Bing.png
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
 
 #[Rewrite]
 #^https:\/\/eine.bgka\.me\/.* header-add X-Forwarded-For 1.1.1.1

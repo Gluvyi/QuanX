@@ -1,9 +1,9 @@
 const headers = $request.headers;
 delete headers["user-agent"];
-delete headers["host"];
+delete headers["Host"];
 
 headers['User-Agent'] = `Fileball/200 CFNetwork/1327.0.4 Darwin/21.2.0`;
-headers['host'] = `webcast5-open-hl.douyin.com`;
+headers['Host'] = `webcast5-open-hl.douyin.com`;
 
 if ('X-Emby-Authorization' in headers){
     delete headers["X-Emby-Authorization"];

@@ -244,7 +244,7 @@ async function GetCookie() {
       // console.log($response);
       // const respBody = JSON.parse($response.body);
       // const pin = respBody.userInfoSns.unickName;
-      const code = `wskey=${wskey};pt_pin=${pt_pin};`;
+      const code = `pt_key=${wskey};pt_pin=${pt_pin};`;
 
       const username = getUsername(code);
       const CookiesData = getCache();

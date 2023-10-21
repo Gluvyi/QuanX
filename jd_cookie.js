@@ -278,9 +278,9 @@ async function GetCookie() {
       }
       $.write(JSON.stringify(CookiesData, null, `\t`), CacheKey);
       if ($.mute === "true") {
-        return console.log("用户名: " + username + `${text}wskey成功 🎉`);
+        return console.log("用户名: " + username + `${text}cookie成功 🎉`);
       }
-      return $.notify("用户名: " + username, "", `${text}wskey成功 🎉`, {
+      return $.notify("用户名: " + username, "", `${text}cookie成功 🎉`, {
         "update-pasteboard": code,
       });
     }

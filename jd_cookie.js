@@ -178,76 +178,15 @@ function updateJDHelp(username) {
 
 async function GetCookie() {
   const CV = `${$request.headers["Cookie"] || $request.headers["cookie"]};`;
-
-  // if ($request.url.indexOf("https://lbsgw.m.jd.com/m2") !== -1) {
-  //   if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
-  //     const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
-  //     if (CookieValue.indexOf("fake_") > -1) return console.log("异常账号");
-  //     const DecodeName = getUsername(CookieValue);
-  //     let updateIndex = null,
-  //       CookieName,
-  //       tipPrefix;
-
-  //     const CookiesData = getCache();
-  //     const updateCookiesData = [...CookiesData];
-
-  //     CookiesData.forEach((item, index) => {
-  //       if (getUsername(item.cookie) === DecodeName) updateIndex = index;
-  //     });
-
-  //     if ($.ql) {
-  //       for (const item of allConfig) {
-  //         $.ql_config = item;
-  //         $.ql.initial();
-  //         await $.ql.asyncCookie(CookieValue, "JD_COOKIE");
-  //       }
-  //     }
-
-  //     if (updateIndex !== null) {
-  //       // const response = await TotalBean(updateCookiesData[updateIndex].cookie)
-  //       // if (response && response.retcode === '0')
-  //       //   return console.log('cookie 未过期，无需更新')
-  //       updateCookiesData[updateIndex].cookie = CookieValue;
-  //       CookieName = "【账号" + (updateIndex + 1) + "】";
-  //       tipPrefix = "更新京东";
-  //     } else {
-  //       updateCookiesData.push({
-  //         userName: DecodeName,
-  //         cookie: CookieValue,
-  //       });
-  //       CookieName = "【账号" + updateCookiesData.length + "】";
-  //       tipPrefix = "首次写入京东";
-  //     }
-  //     const cacheValue = JSON.stringify(updateCookiesData, null, `\t`);
-  //     $.write(cacheValue, CacheKey);
-  //     updateJDHelp(DecodeName);
-
-  //     if ($.mute === "true") {
-  //       return console.log(
-  //         "用户名: " + DecodeName + tipPrefix + CookieName + "Cookie成功 🎉"
-  //       );
-  //     }
-  //     $.notify(
-  //       "用户名: " + DecodeName,
-  //       "",
-  //       tipPrefix + CookieName + "Cookie成功 🎉",
-  //       { "update-pasteboard": CookieValue }
-  //     );
-  //   } else {
-  //     console.log("ck 写入失败，未找到相关 ck");
-  //   }
-  // } else 
   if ($request.headers && $request.url.indexOf("https://lbsgw.m.jd.com/m2") > -1) {
     if (CV.match(/pt_key=([^=;]+?);/)[1]) {
       const wskey = CV.match(/pt_key=([^=;]+?);/)[1];
       const pt_pin = CV.match(/pt_pin=([^=;]+?);/)[1];
-      // console.log($response);
-      // const respBody = JSON.parse($response.body);
-      // const pin = respBody.userInfoSns.unickName;
       const code = `pt_key=${wskey};pt_pin=${pt_pin};`;
 
       const username = getUsername(code);
       const CookiesData = getCache();
+      console.log(CookiesData);
       let updateIndex = false;
       console.log(`用户名：${username}`);
       console.log(`同步 wskey: ${code}`);
@@ -287,23 +226,6 @@ async function GetCookie() {
   } else {
     console.log("未匹配到相关信息，退出抓包");
   }
-}
-
-async function TotalBean(Cookie) {
-  const opt = {
-    url: "https://me-api.jd.com/user_new/info/GetJDUserInfoUnion?sceneval=2&sceneval=2&g_login_type=1&g_ty=ls&isLogin=1",
-    headers: {
-      cookie: Cookie,
-      Referer: "https://home.m.jd.com/",
-    },
-  };
-  return $.http.get(opt).then((response) => {
-    try {
-      return JSON.parse(response.body);
-    } catch (e) {
-      return false;
-    }
-  });
 }
 
 function ENV() {

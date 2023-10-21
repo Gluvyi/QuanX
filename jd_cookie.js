@@ -216,6 +216,9 @@ async function GetCookie() {
         text = `修改`;
       }
       $.write(JSON.stringify(CookiesData, null, `\t`), CacheKey);
+
+      const CookiesData1 = getCache();
+      console.log(CookiesData1)
       if ($.mute === "true") {
         return console.log("用户名: " + username + `${text}cookie成功 🎉`);
       }

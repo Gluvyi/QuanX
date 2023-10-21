@@ -7,7 +7,7 @@
 #^https:\/\/lbsgw\.m\.jd\.com\/m2 header-add X-Forwarded-For 1.1.1.1
 
 [Script]
-http-request ^https:\/\/lbsgw\.m\.jd\.com\/m2 scripte-path=https://raw.githubusercontent.com/Gluvyi/QuanX/main/jd_cookie.js requires-body = false, tag = jd cookie
+http-request ^https:\/\/lbsgw\.m\.jd\.com\/m2 scripte-path=https://raw.githubusercontent.com/Gluvyi/QuanX/main/jd_cookie.js,requires-body = false, tag = jd cookie
 
 [MITM]
 hostname = %APPEND% me-api.jd.com,api-dd.jd.com,api.m.jd.com

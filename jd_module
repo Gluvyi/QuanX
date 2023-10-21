@@ -3,7 +3,7 @@
 
 [Script]
 # > 获取多账号京东Cookie
-app京东Cookie = type=http-request,pattern=https:\/\/lbsgw\.m\.jd\.com\/m2,script-path=https://raw.githubusercontent.com/Gluvyi/QuanX/main/jd_cookie.js
+app京东Cookie = type=http-response,pattern=^https:\/\/lbsgw\.m\.jd\.com\/m2,requires-body=1,max-size=0,timeout=1000,script-path=https://raw.githubusercontent.com/Gluvyi/QuanX/main/jd_cookie.js,script-update-interval=0
 
 #获取多账号京东Cookie = type=http-request,pattern=https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/JD_extra_cookie.js
 #app京东Cookie = type=http-request,pattern=https:\/\/api\.m\.jd\.com\/openUpgrade,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/JD_extra_cookie.js

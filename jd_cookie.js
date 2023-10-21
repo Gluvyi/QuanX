@@ -90,7 +90,7 @@ const allConfig = getSessions()
   eval(ql_script);
 
   if ($.ql) {
-    $.ql.asyncCookie = async (cookieValue, name = "JD_WSCK") => {
+    $.ql.asyncCookie = async (cookieValue, name = "JD_COOKIE") => {
       try {
         await $.ql.login();
         console.log(`青龙${name}登陆同步`);
@@ -110,7 +110,7 @@ const allConfig = getSessions()
         remarks = remark.find((item) => item.username === DecodeName);
         if (remarks) {
           remarks =
-            name === "JD_WSCK"
+            name === "JD_COOKIE"
               ? remarks.nickname
               : `${remarks.nickname}&${remarks.remark}&${remarks.qywxUserId}`;
         }

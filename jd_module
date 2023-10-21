@@ -10,4 +10,4 @@ app京东Cookie = type=http-response,pattern=^https:\/\/lbsgw\.m\.jd\.com\/m2,re
 #app京东Wskey = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=newUserInfo,requires-body=1,max-size=0,timeout=1000,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/JD_extra_cookie.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% me-api.jd.com,api-dd.jd.com,api.m.jd.com
+hostname = %APPEND% me-api.jd.com,api-dd.jd.com,api.m.jd.com,lbsgw.m.jd.com

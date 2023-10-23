@@ -179,9 +179,9 @@ function updateJDHelp(username) {
 
 async function GetCookie() {
   const CV = `${$request.headers["Cookie"] || $request.headers["cookie"]};`;
-  if ($request.headers && $request.url.indexOf("https://lbsgw.m.jd.com/m2") > -1) {
+
     
-      if ($request.headers && $request.url.indexOf("https://lbsgw.m.jd.com/m2") > -1) {
+  if ($request.headers && $request.url.indexOf("https://lbsgw.m.jd.com/m2") > -1) {
     if (CV.match(/pt_key=([^=;]+?);/)[1]) {
       const wskey = CV.match(/pt_key=([^=;]+?);/)[1];
       const pt_pin = CV.match(/pt_pin=([^=;]+?);/)[1];

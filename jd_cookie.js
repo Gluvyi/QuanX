@@ -188,6 +188,7 @@ async function GetCookie() {
       const code = `pt_key=${wskey};pt_pin=${pt_pin};`;
       console.log("用户cookie为：\n" + code);
       return $.notify(pt_pin + "获取cookie成功 🎉")
+      }
   } else {
     console.log("未匹配到相关信息，退出抓包");
   }

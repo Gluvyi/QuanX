@@ -172,8 +172,8 @@ async function GetCookie() {
       if (current) {
         current.value = CookieValue;
         response = await $.ql.edit({
-          name,
-          //remarks: current.remarks||remarks,
+          name: "JD_COOKIE",
+          remarks: current.remarks||remarks,
           value: CookieValue,
           id: current.id,
         });
@@ -183,7 +183,7 @@ async function GetCookie() {
         }
       } else {
         response = await $.ql.add([
-          { name: name, value: CookieValue, remarks: remarks },
+          { name: "JD_COOKIE", value: CookieValue, remarks: remarks },
         ]);
       }
       console.log(JSON.stringify(response));

@@ -156,6 +156,10 @@ async function GetCookie() {
       );
       console.log(current)
       if (current && current.value === CookieValue) {
+        $.notify(
+            "用户名: " + DecodeName,
+            `账号无需更新!`
+          );
         console.log("该账号无需更新");
         return;
       }

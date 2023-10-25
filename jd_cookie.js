@@ -188,59 +188,57 @@ async function GetCookie() {
     if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
       const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
       if (CookieValue.indexOf("fake_") > -1) return console.log("异常账号");
-      const DecodeName = getUsername(CookieValue);
-      let updateIndex = null,
-        CookieName,
-        tipPrefix;
-
-      const CookiesData = getCache();
-      const updateCookiesData = [...CookiesData];
-      console.log(updateCookiesData)
-
-      CookiesData.forEach((item, index) => {
-        if (getUsername(item.cookie) === DecodeName) updateIndex = index;
-      });
-
-      if ($.ql) {
-        for (const item of allConfig) {
-          $.ql_config = item;
-          $.ql.initial();
-          await $.ql.asyncCookie(CookieValue, "JD_COOKIE");
-        }
-      }
-
-      if (updateIndex !== null) {
-        // const response = await TotalBean(updateCookiesData[updateIndex].cookie)
-        // if (response && response.retcode === '0')
-        //   return console.log('cookie 未过期，无需更新')
-        updateCookiesData[updateIndex].cookie = CookieValue;
-        CookieName = "【账号" + (updateIndex + 1) + "】";
-        tipPrefix = "更新京东";
-      } else {
-        updateCookiesData.push({
-          userName: DecodeName,
-          cookie: CookieValue,
-        });
-        CookieName = "【账号" + updateCookiesData.length + "】";
-        tipPrefix = "首次写入京东";
-      }
-      const cacheValue = JSON.stringify(updateCookiesData, null, `\t`);
-      $.write(cacheValue, CacheKey);
-      updateJDHelp(DecodeName);
-
-      if ($.mute === "true") {
-        return console.log(
-          "用户名: " + DecodeName + tipPrefix + CookieName + "Cookie成功 🎉"
-        );
-      }
-      $.notify(
-        "用户名: " + DecodeName,
-        "",
-        tipPrefix + CookieName + "Cookie成功 🎉",
-        { "update-pasteboard": CookieValue }
+      
+      if (!qlCk.data) return;
+      qlCk = qlCk.data;
+      const DecodeName = getUsername(cookieValue);
+      const current = qlCk.find(
+        (item) => getUsername(item.value) === DecodeName
       );
-    } else {
-      console.log("ck 写入失败，未找到相关 ck");
+      if (current && current.value === cookieValue) {
+        console.log("该账号无需更新");
+        return;
+      }
+
+      let remarks = "";
+      remarks = remark.find((item) => item.username === DecodeName);
+      if (remarks) {
+        remarks =
+          name === "JD_COOKIE"
+            ? remarks.nickname
+            : `${remarks.nickname}&${remarks.remark}&${remarks.qywxUserId}`;
+      }
+      let response;
+      if (current) {
+        current.value = cookieValue;
+        response = await $.ql.edit({
+          name,
+          remarks: current.remarks || remarks,
+          value: cookieValue,
+          id: current.id,
+        });
+        if (response.data.status === 1) {
+          response = await $.ql.enabled([current.id]);
+        }
+      } else {
+        response = await $.ql.add([
+          { name: name, value: cookieValue, remarks: remarks },
+        ]);
+      }
+      console.log(JSON.stringify(response));
+      if ($.mute === "true" && response.code === 200) {
+        return console.log(
+          "用户名: " + DecodeName + `同步${name}更新青龙成功🎉`
+        );
+      } else if (response.code === 200) {
+        $.notify(
+          "用户名: " + DecodeName,
+          $.ql_config.ip,
+          `同步${name}更新青龙成功🎉`
+        );
+      } else {
+        console.log("青龙同步失败");
+      }
     }
   }
 }

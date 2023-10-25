@@ -191,6 +191,7 @@ async function GetCookie() {
 
       const CookiesData = getCache();
       const updateCookiesData = [...CookiesData];
+      console.log(updateCookiesData)
 
       CookiesData.forEach((item, index) => {
         if (getUsername(item.cookie) === DecodeName) updateIndex = index;

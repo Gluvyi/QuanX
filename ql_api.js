@@ -2,8 +2,7 @@ $.ql = {
   type: 'open',
   headers: {
     'Content-Type': `application/json;charset=UTF-8`,
-    'Authorization': 'Bearer 6b0be74a-43ef-451b-a882-ec89f6f6de91',
-    'Accept': 'application/json'
+    Authorization: '',
   },
   disabled(ids) {
     if (!this.headers.Authorization) return;

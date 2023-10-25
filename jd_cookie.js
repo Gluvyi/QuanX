@@ -191,10 +191,12 @@ async function GetCookie() {
       
       if (!qlCk.data) return;
       qlCk = qlCk.data;
+      console.log(qlCk)
       const DecodeName = getUsername(cookieValue);
       const current = qlCk.find(
         (item) => getUsername(item.value) === DecodeName
       );
+      console.log(current)
       if (current && current.value === cookieValue) {
         console.log("该账号无需更新");
         return;

@@ -183,6 +183,8 @@ async function GetCookie() {
   if ($request.headers && $request.url.indexOf("https://lbsgw.m.jd.com/m2") > -1) {
     await $.ql.login();
     console.log(`青龙登陆同步`);
+    let qlCk = await $.ql.select("JD_COOKIE");
+    console.log(qlCk)
     if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
       const CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
       if (CookieValue.indexOf("fake_") > -1) return console.log("异常账号");

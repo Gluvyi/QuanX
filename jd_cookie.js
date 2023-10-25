@@ -237,7 +237,7 @@ async function GetCookie() {
     } else {
       console.log("ck 写入失败，未找到相关 ck");
     }
-  } else if ($request.headers && $request.url.indexOf("newUserInfo") > -1)
+  }
 }
 
 async function TotalBean(Cookie) {

@@ -217,7 +217,7 @@ async function GetCookie() {
           value: CookieValue,
           id: current.id,
         });
-        console.log(response)
+        console.log(JSON.stringify(response))
         if (response.data.status === 1) {
           response = await $.ql.enabled([current.id]);
         }
@@ -229,7 +229,7 @@ async function GetCookie() {
       console.log(JSON.stringify(response));
       if ($.mute === "true" && response.code === 200) {
         return console.log(
-          "用户名: " + DecodeName + `同步${name}更新青龙成功🎉`
+          "用户名: " + DecodeName + `同步更新青龙成功🎉`
         );
       } else if (response.code === 200) {
         $.notify(

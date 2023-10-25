@@ -49,69 +49,7 @@ const allConfig = getSessions()
   const ql_script = (await getScriptUrl()) || "";
   eval(ql_script);
   
-
-  if ($.ql) {
-    $.ql.asyncCookie = async (cookieValue, name = "JD_COOKIE") => {
-      try {
-        await $.ql.login();
-        console.log(`青龙登陆同步`);
-        let qlCk = await $.ql.select(name);
-        if (!qlCk.data) return;
-        qlCk = qlCk.data;
-        const DecodeName = getUsername(cookieValue);
-        const current = qlCk.find(
-          (item) => getUsername(item.value) === DecodeName
-        );
-        if (current && current.value === cookieValue) {
-          console.log("该账号无需更新");
-          return;
-        }
-
-        let remarks = "";
-        remarks = remark.find((item) => item.username === DecodeName);
-        if (remarks) {
-          remarks =
-            name === "JD_COOKIE"
-              ? remarks.nickname
-              : `${remarks.nickname}&${remarks.remark}&${remarks.qywxUserId}`;
-        }
-        let response;
-        if (current) {
-          current.value = cookieValue;
-          response = await $.ql.edit({
-            name,
-            remarks: current.remarks || remarks,
-            value: cookieValue,
-            id: current.id,
-          });
-          if (response.data.status === 1) {
-            response = await $.ql.enabled([current.id]);
-          }
-        } else {
-          response = await $.ql.add([
-            { name: name, value: cookieValue, remarks: remarks },
-          ]);
-        }
-        console.log(JSON.stringify(response));
-        if ($.mute === "true" && response.code === 200) {
-          return console.log(
-            "用户名: " + DecodeName + `同步${name}更新青龙成功🎉`
-          );
-        } else if (response.code === 200) {
-          $.notify(
-            "用户名: " + DecodeName,
-            $.ql_config.ip,
-            `同步${name}更新青龙成功🎉`
-          );
-        } else {
-          console.log("青龙同步失败");
-        }
-      } catch (e) {
-        console.log(e);
-      }
-    };
-  }
-  if ($request) await GetCookie();
+  await GetCookie();
 })()
   .catch((e) => {
     console.log(e);

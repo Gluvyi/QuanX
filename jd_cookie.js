@@ -200,20 +200,20 @@ async function GetCookie() {
         return;
       }
 
-      //let remarks = "";
-      //remarks = remark.find((item) => item.username === DecodeName);
-      //if (remarks) {
-        //remarks =
-          //name === "JD_COOKIE"
-            //? remarks.nickname
-            //: `${remarks.nickname}&${remarks.remark}&${remarks.qywxUserId}`;
-      //}
+      let remarks = "";
+      remarks = remark.find((item) => item.username === DecodeName);
+      if (remarks) {
+        remarks =
+          name === "JD_COOKIE"
+            ? remarks.nickname
+            : `${remarks.nickname}&${remarks.remark}&${remarks.qywxUserId}`;
+      }
       let response;
       if (current) {
         current.value = CookieValue;
         response = await $.ql.edit({
           name,
-          remarks: current.remarks
+          remarks: current.remarks||remarks
           value: CookieValue,
           id: current.id,
         });
@@ -235,7 +235,7 @@ async function GetCookie() {
         $.notify(
           "用户名: " + DecodeName,
           $.ql_config.ip,
-          `同步${name}更新青龙成功🎉`
+          `同步更新青龙成功🎉`
         );
       } else {
         console.log("青龙同步失败");

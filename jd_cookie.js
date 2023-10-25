@@ -213,7 +213,7 @@ async function GetCookie() {
         current.value = CookieValue;
         response = await $.ql.edit({
           name,
-          remarks: current.remarks||remarks
+          remarks: current.remarks||remarks,
           value: CookieValue,
           id: current.id,
         });

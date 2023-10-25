@@ -192,12 +192,12 @@ async function GetCookie() {
       if (!qlCk.data) return;
       qlCk = qlCk.data;
       console.log(qlCk)
-      const DecodeName = getUsername(cookieValue);
+      const DecodeName = getUsername(CookieValue);
       const current = qlCk.find(
         (item) => getUsername(item.value) === DecodeName
       );
       console.log(current)
-      if (current && current.value === cookieValue) {
+      if (current && current.value === CookieValue) {
         console.log("该账号无需更新");
         return;
       }
@@ -212,11 +212,11 @@ async function GetCookie() {
       }
       let response;
       if (current) {
-        current.value = cookieValue;
+        current.value = CookieValue;
         response = await $.ql.edit({
           name,
           remarks: current.remarks || remarks,
-          value: cookieValue,
+          value: CookieValue,
           id: current.id,
         });
         if (response.data.status === 1) {
@@ -224,7 +224,7 @@ async function GetCookie() {
         }
       } else {
         response = await $.ql.add([
-          { name: name, value: cookieValue, remarks: remarks },
+          { name: name, value: CookieValue, remarks: remarks },
         ]);
       }
       console.log(JSON.stringify(response));

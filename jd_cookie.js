@@ -87,18 +87,17 @@ async function GetCookie() {
       
       if (!qlCk.data) return;
       qlCk = qlCk.data;
-      console.log(qlCk)
+      
       const DecodeName = getUsername(CookieValue);
       const current = qlCk.find(
         (item) => getUsername(item.value) === DecodeName
       );
-      console.log(current)
+      
       if (current && current.value === CookieValue) {
         $.notify(
             "用户名: " + DecodeName,
             `账号无需更新!`
           );
-        console.log("该账号无需更新");
         return;
       }
 
@@ -119,7 +118,6 @@ async function GetCookie() {
           value: CookieValue,
           id: current.id,
         });
-        console.log(JSON.stringify(response))
         if (response.data.status === 1) {
           response = await $.ql.enabled([current.id]);
         }
@@ -128,12 +126,7 @@ async function GetCookie() {
           { name: "JD_COOKIE", value: CookieValue, remarks: remarks },
         ]);
       }
-      console.log(JSON.stringify(response));
-      if ($.mute === "true" && response.code === 200) {
-        return console.log(
-          "用户名: " + DecodeName + `同步更新青龙成功🎉`
-        );
-      } else if (response.code === 200) {
+      if (response.code === 200) {
         $.notify(
           "用户名: " + DecodeName,
           $.ql_config.ip,

@@ -94,7 +94,7 @@ const allConfig = getSessions()
     $.ql.asyncCookie = async (cookieValue, name = "JD_COOKIE") => {
       try {
         await $.ql.login();
-        console.log(`青龙${name}登陆同步`);
+        console.log(`青龙登陆同步`);
         let qlCk = await $.ql.select(name);
         if (!qlCk.data) return;
         qlCk = qlCk.data;

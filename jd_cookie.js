@@ -78,7 +78,7 @@ function updateJDHelp(username) {
 async function GetCookie() {
   const CV = `${$request.headers["Cookie"] || $request.headers["cookie"]};`;
   
-  if ($request.headers && $request.url.indexOf("https://lbsgw.m.jd.com/m2") > -1) {
+  if ($request.headers && $request.url.indexOf("https://waapdg.jd.com/api/v1/jdguard/config") > -1) {
     await $.ql.login();
     let qlCk = await $.ql.select("JD_COOKIE");
     if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {

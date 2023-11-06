@@ -80,6 +80,7 @@ async function GetCookie() {
   
   if ($request.headers && $request.url.indexOf("https://lbsgw.m.jd.com/m2") > -1 || $request.url.indexOf("https://waapdg.jd.com/api/v1/jdguard/config") > -1) {
     try{
+      // 抛异常
       await $.ql.login();
     }catch{
       $.notify(

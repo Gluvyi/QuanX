@@ -82,11 +82,11 @@ async function GetCookie() {
     try{
       // 抛异常
       await $.ql.login();
-    }catch{
+    }catch(error){
       $.notify(
           "用户名: " + DecodeName,
           $.ql_config.ip,
-          `登录青龙失败！服务器可能出现问题！`
+          `青龙登录失败！服务器可能出现问题！`
         );
       return
     }

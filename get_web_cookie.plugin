@@ -1,0 +1,17 @@
+#!name = get cookie from jd web
+#!desc = 获取京东登录页Cookie
+#!openUrl = 
+#!author = Gluvyi
+#!icon = https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/JD_DailyBonus.png
+
+#[Rewrite]
+#^https:\/\/sgm-m.jd\.com\/h5 header-add X-Forwarded-For 1.1.1.1
+#^https:\/\/emby\.pro\/.* header-add X-Forwarded-For 1.1.1.1
+#^https:\/\/cf.jmsooo\.com\/.* header-add X-Forwarded-For 1.1.1.1
+
+
+[Script]
+http-request ^https:\/\/sgm-m.jd\.com\/h5 script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = false, tag = Emby Request
+
+[MITM]
+hostname = sgm-m.jd.com

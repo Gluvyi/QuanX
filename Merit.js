@@ -27,7 +27,7 @@ var replaceData = {
     "expireData": expireData
 };
 
-console.log($response.body.data.items);
+console.log($response.body);
 
 $response.body.data.items.get(0).replace(replaceData);
 var body = $response.body.data.replace(/isMember":\w+/g, 'isMember":1')

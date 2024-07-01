@@ -4,13 +4,8 @@
 #!author = Gluvyi
 
 
-#[Rewrite]
-#^https:\/\/api\.merach\.com\/user\/user-member header-add X-Forwarded-For 1.1.1.1
-
-
-
 [Script]
-http-request ^https:\/\/api\.merach\.com\/user\/user-member script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/Merit.js, requires-body = true, tag = Merit
+http-response ^https:\/\/api\.merach\.com\/user\/user-member script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/Merit.js, requires-body = true, tag = Merit
 
 [MITM]
 hostname = api.merach.com

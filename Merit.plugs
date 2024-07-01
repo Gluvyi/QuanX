@@ -1,0 +1,16 @@
+#!name = Merit会员
+#!desc = Merit解锁至2026-09-30。
+#!openUrl =
+#!author = Gluvyi
+
+
+#[Rewrite]
+#^https:\/\/api\.merach\.com\/user\/user-member header-add X-Forwarded-For 1.1.1.1
+
+
+
+[Script]
+http-request ^https:\/\/api\.merach\.com\/user\/user-member script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/emby_request.js, requires-body = true, tag = Emby Request
+
+[MITM]
+hostname = api.merach.com

@@ -27,8 +27,6 @@ var replaceData = {
     "expireData": expireData
 };
 
-console.log($response.body);
-
 var responseJson = JSON.parse($response.body);
 responseJson.data.isMember = 1;
 responseJson.data.days = dateDiffInDays;

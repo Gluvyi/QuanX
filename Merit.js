@@ -1,13 +1,12 @@
 /***************
-[rewrite_local]
-^https:\/\/api\.merach\.com\/user\/user-member url script-response-body Merit.js
+ [rewrite_local]
+ ^https:\/\/api\.merach\.com\/user\/user-member url script-response-body Merit.js
 
-[mitm]
-hostname = api.merach.com
-***************/
+ [mitm]
+ hostname = api.merach.com
+ ***************/
 
 const expireData = '2026-09-30';
-
 
 
 
@@ -17,7 +16,7 @@ function dateDiffInDays() {
     var currentData = new Date();
     // 设置目标日期为2026-09-30
     const targetDate = new Date(expireData);
-    const timeDiff = targetDate.getTime() - currentDate.getTime();
+    const timeDiff = targetDate.getTime() - currentData.getTime();
     return Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 }
 

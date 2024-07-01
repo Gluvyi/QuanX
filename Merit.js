@@ -27,12 +27,38 @@ var replaceData = {
     "expireData": expireData
 };
 
-console.log($response.body.data);
+console.log($response.body);
 
-$response.body.data.items.get(0).replace(replaceData);
-var body = $response.body.data.replace(/isMember":\w+/g, 'isMember":1')
-    .replace(/days":\w+/g, dateDiffInDays)
-    .replace(/level":\w+/g, 'level": 5')
-    .replace(/expireDate":\w+/g, `expireDate": ${expireData}`);
+var responseJson = JSON.parse($response.body);
+responseJson.data.isMember = 1;
+responseJson.data.days = dateDiffInDays;
+responseJson.data.level = 5;
+responseJson.data.expireDate = expireData;
+responseJson.data.items = [
+    {
+        "isExpire": 0,
+        "vipType": 10,
+        "days": dateDiffInDays,
+        "expireDate": expireData
+    },
+    {
+        "isExpire": 1,
+        "vipType": 20,
+        "days": "0",
+        "expireDate": ""
+    },
+    {
+        "isExpire": 1,
+        "vipType": 30,
+        "days": "0",
+        "expireDate": ""
+    }
+];
 
-$done({body})
+// $response.body.data.items.get(0).replace(replaceData);
+// var body = $response.body.data.replace(/isMember":\w+/g, 'isMember":1')
+//     .replace(/days":\w+/g, dateDiffInDays)
+//     .replace(/level":\w+/g, 'level": 5')
+//     .replace(/expireDate":\w+/g, `expireDate": ${expireData}`);
+
+$done({body: JSON.stringify(responseJson)})

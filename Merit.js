@@ -40,16 +40,16 @@ responseJson.data.items = [
         "expireDate": expireData
     },
     {
-        "isExpire": 1,
+        "isExpire": 0,
         "vipType": 20,
-        "days": "0",
-        "expireDate": ""
+        "days": dateDiffInDays,
+        "expireDate": expireData
     },
     {
-        "isExpire": 1,
+        "isExpire": 0,
         "vipType": 30,
-        "days": "0",
-        "expireDate": ""
+        "days": dateDiffInDays,
+        "expireDate": expireData
     }
 ];
 

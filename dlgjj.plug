@@ -1,1 +1,11 @@
-hdv
+#!name = 大连公积金净化
+#!desc = 移除不需要的页面
+#!openUrl =
+#!author = Gluvyi
+
+
+[Script]
+http-response ^https\:\/\/app\.daliangjj\.com\:8443\/appservice\/m\/index\/indexByVersion\/236 script-path = https://raw.githubusercontent.com/Gluvyi/QuanX/main/dlgjj.js, requires-body = true, tag = dlgjj
+
+[MITM]
+hostname = api.merach.com

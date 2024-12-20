@@ -78,7 +78,7 @@ function updateJDHelp(username) {
 async function GetCookie() {
   const CV = `${$request.headers["Cookie"] || $request.headers["cookie"]};`;
   // https://sgm-m.jd.com/h5
-  if ($request.headers && $request.url.indexOf("https://walletbalanceh5.jdpay.com/gw2/generic/waltBalnce/h5/m/getFaqInfo") > -1) {
+  if ($request.headers && $request.url.indexOf("https://jdqd.jd.com/poststring_en") > -1) {
     try{
       // 抛异常
       await $.ql.login();

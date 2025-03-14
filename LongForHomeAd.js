@@ -6,10 +6,10 @@ let obj = JSON.parse($response.body);
 if (url.includes("/supera/C4/v1_11_0/publicApi/nav/query/app")) {
     if (obj?.data?.data?.length > 0) {
         let jsonData = obj.data.data;
-        if (Array.isArray(jsonData)){
-            jsonData = jsonData.filter(item => item.frameName !== "商城")
+        if (Array.isArray(obj.data.data)){
+            obj.data.data = obj.data.data.filter(item => item?.frameName? !== "商城")
         }
-        console.log(jsonData)
+        console.log(obj.data.data)
     }
 }
 

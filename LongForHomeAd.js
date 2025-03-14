@@ -28,9 +28,15 @@ if (url.includes(urlSuffix + "/navigation")) {
 // 只保留首页中MiniCard
 if (url.includes("/getPageData/C4home")) {
     if (obj?.data?.components?.length > 0) {
-        if (Array.isArray(obj.data.components)){
-            obj.data.components = obj.data.components.filter(item => item?.componentType === "MiniCard");
+        const orignalData = { ...obj.data };
+        if (Array.isArray(orignalData.components)){
+            orignalData.components = orignalData.components.filter(item => item?.componentType === "MiniCard");
         }
+
+        obj.data = {
+            ...obj.data,
+            components: orignalData.components
+        };
     }
     console.log(obj.data.components)
 }

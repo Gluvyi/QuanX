@@ -38,7 +38,7 @@ if (url.includes("/getPageData/C4home")) {
             components: orignalData.components
         };
     }
-    console.log(obj.data.components)
+    console.log(obj.data)
 }
 
 $done({ body: JSON.stringify(obj) });

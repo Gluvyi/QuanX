@@ -57,7 +57,7 @@ if (url.includes("/pageServiceCardByGroupCode")) {
     console.log(obj.data)
 }
 
-// 删除会员页面中“花珑珠”和“公益”
+// 删除会员页面中“花珑珠”和“公益”，“订单”，“收藏”，“我的卡”
 if (url.includes("/pageConfig")) {
     if (obj?.data?.components?.length > 0) {
         const orignalData = { ...obj.data };
@@ -65,6 +65,29 @@ if (url.includes("/pageConfig")) {
             orignalData.components = orignalData.components.filter(item => item?.componentType !== "expendLongZhu" && item?.componentType !== "Banner");
         }
 
+        const block_title = ["我的订单", "我的收藏", "我的卡", "意见反馈"];
+        function filterComponents(data) {
+            if (!Array.isArray(data)) return data;
+            
+            return data
+              .filter(item => !BLACKLIST_TITLES.includes(item?.title))
+              .map(item => ({
+                ...item,
+                children: item.children ? filterComponents(item.children) : null
+              }));
+        }
+
+        orignalData.components = orignalData.components.map(component => {
+              if (component.componentType === "toolsEntry" && component.children) {
+                    return {
+                      ...component,
+                      children: filterComponents(component.children)
+                    };
+                }
+                return component;
+            });
+        }
+        
         obj.data = {
             ...obj.data,
             components: orignalData.components

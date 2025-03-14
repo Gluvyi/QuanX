@@ -12,15 +12,15 @@ if (url.includes(urlSuffix + "/app")) {
             obj.data.data = obj.data.data.filter(item => item?.frameName !== "商城" && item.frameName !== "首页");
         }
         
-        obj.data.data = obj.data.data.map(item => {
-                if (item.frameName === "服务") {
-                    return{
-                        ...item,
-                        frameCode: "home"
-                    };
-                }
-                return item;
-            });
+        // obj.data.data = obj.data.data.map(item => {
+        //         if (item.frameName === "服务") {
+        //             return{
+        //                 ...item,
+        //                 frameCode: "home"
+        //             };
+        //         }
+        //         return item;
+        //     });
         console.log(obj.data.data)
     }
 } 

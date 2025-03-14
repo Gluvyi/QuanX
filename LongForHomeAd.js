@@ -9,18 +9,8 @@ const urlSuffix = "/nav/query"
 if (url.includes(urlSuffix + "/app")) {
     if (obj?.data?.data?.length > 0) {
         if (Array.isArray(obj.data.data)){
-            obj.data.data = obj.data.data.filter(item => item?.frameName !== "商城" && item.frameName !== "首页");
+            obj.data.data = obj.data.data.filter(item => item?.frameName !== "商城");
         }
-        
-        // obj.data.data = obj.data.data.map(item => {
-        //         if (item.frameName === "服务") {
-        //             return{
-        //                 ...item,
-        //                 frameCode: "home"
-        //             };
-        //         }
-        //         return item;
-        //     });
         console.log(obj.data.data)
     }
 } 
@@ -35,10 +25,14 @@ if (url.includes(urlSuffix + "/navigation")) {
     }
 }
 
-// 去除首页中购物推广
-if (url.includes("/getFeedData/TJ")) {
-    obj.data.feedData = [];
-    console.log(obj.data.feedData)
+// 只保留首页中MiniCard
+if (url.includes("/getPageData/C4home")) {
+    if (obj?.data?.components?.length > 0) {
+        if (Array.isArray(obj.data.components)){
+            obj.data.components = obj.data.data.components(item => item?.componentType === "MiniCard");
+        }
+    }
+    console.log(obj.data.components)
 }
 
 $done({ body: JSON.stringify(obj) });

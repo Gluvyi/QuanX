@@ -42,7 +42,7 @@ if (url.includes("/getPageData/C4home")) {
 }
 
 // 删除服务中“生活助手栏”
-if (url.includes("/serviceCard/pageServiceCardByGroupCode")) {
+if (url.includes("/pageServiceCardByGroupCode")) {
     if (obj?.data?.serviceCardDtoList) {
         obj.data.serviceCardDtoList = obj.data.serviceCardDtoList.map(card => {
           // 处理每个卡片中的 serviceModuleDtoList

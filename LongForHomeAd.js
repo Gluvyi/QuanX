@@ -78,15 +78,14 @@ if (url.includes("/pageConfig")) {
         }
 
         orignalData.components = orignalData.components.map(component => {
-              if (component.componentType === "toolsEntry" && component.children) {
-                    return {
-                      ...component,
-                      children: filterComponents(component.children)
-                    };
-                }
-                return component;
-            });
-        }
+          if (component.componentType === "toolsEntry" && component.children) {
+                return {
+                  ...component,
+                  children: filterComponents(component.children)
+                };
+            }
+            return component;
+        });
         
         obj.data = {
             ...obj.data,

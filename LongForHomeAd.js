@@ -3,7 +3,7 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-const urlSuffix = "/nav/query
+const urlSuffix = "/nav/query"
 
 // 去除app初始化首页中商城按钮
 if (url.includes(urlSuffix + "/app")) {

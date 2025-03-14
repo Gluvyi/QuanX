@@ -25,7 +25,7 @@ if (url.includes(urlSuffix + "/navigation")) {
     }
 }
 
-// 只保留首页中MiniCard
+// 只保留首页中MiniCard和headBanner
 if (url.includes("/getPageData/C4home")) {
     if (obj?.data?.components?.length > 0) {
         const orignalData = { ...obj.data };
@@ -56,5 +56,22 @@ if (url.includes("/pageServiceCardByGroupCode")) {
     }
     console.log(obj.data)
 }
+
+// 删除会员页面中“花珑珠”
+if (url.includes("/pageConfig")) {
+    if (obj?.data?.components?.length > 0) {
+        const orignalData = { ...obj.data };
+        if (Array.isArray(orignalData.components)){
+            orignalData.components = orignalData.components.filter(item => item?.componentType !== "expendLongZhu" && item?.componentType === "Banner");
+        }
+
+        obj.data = {
+            ...obj.data,
+            components: orignalData.components
+        };
+    }
+    console.log(obj.data)
+}
+
 
 $done({ body: JSON.stringify(obj) });

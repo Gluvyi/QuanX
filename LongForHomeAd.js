@@ -57,7 +57,7 @@ if (url.includes("/pageServiceCardByGroupCode")) {
     console.log(obj.data)
 }
 
-// 删除会员页面中“花珑珠”和“公益”，“订单”，“收藏”，“我的卡”
+// 删除会员页面中“花珑珠”和“公益”，“订单”，“收藏”，“我的卡”,"意见反馈"
 if (url.includes("/pageConfig")) {
     if (obj?.data?.components?.length > 0) {
         const orignalData = { ...obj.data };
@@ -65,7 +65,7 @@ if (url.includes("/pageConfig")) {
             orignalData.components = orignalData.components.filter(item => item?.componentType !== "expendLongZhu" && item?.componentType !== "Banner");
         }
 
-        const block_title = ["我的订单", "我的收藏", "我的卡", "意见反馈"];
+        const BLACKLIST_TITLES = ["我的订单", "我的收藏", "我的卡", "意见反馈"];
         function filterComponents(data) {
             if (!Array.isArray(data)) return data;
             

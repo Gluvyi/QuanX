@@ -30,13 +30,29 @@ if (url.includes("/getPageData/C4home")) {
     if (obj?.data?.components?.length > 0) {
         const orignalData = { ...obj.data };
         if (Array.isArray(orignalData.components)){
-            orignalData.components = orignalData.components.filter(item => item?.componentType === "MiniCard");
+            orignalData.components = orignalData.components.filter(item => item?.componentType === "MiniCard" || item?.componentType === "headBanner");
         }
 
         obj.data = {
             ...obj.data,
             components: orignalData.components
         };
+    }
+    console.log(obj.data)
+}
+
+// 删除服务中“生活助手栏”
+if (url.includes("/serviceCard/pageServiceCardByGroupCode")) {
+    if (obj?.data?.serviceCardDtoList) {
+        obj.data.serviceCardDtoList = obj.data.serviceCardDtoList.map(card => {
+          // 处理每个卡片中的 serviceModuleDtoList
+          if (card.serviceModuleDtoList && Array.isArray(card.serviceModuleDtoList)) {
+            card.serviceModuleDtoList = card.serviceModuleDtoList.filter(module => 
+              module.name !== "生活助手"
+            );
+          }
+          return card;
+        });
     }
     console.log(obj.data)
 }

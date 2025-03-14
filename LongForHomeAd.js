@@ -9,8 +9,8 @@ if (url.includes("/supera/C4/v1_11_0/publicApi/nav/query/app")) {
         if (Array.isArray(jsonData)){
             jsonData = jsonData.filter(item => item.frameName !== "商城")
         }
+        console.log(jsonData)
     }
-    console.log(jsonData)
 }
 
 $done({ body: JSON.stringify(jsonData) });

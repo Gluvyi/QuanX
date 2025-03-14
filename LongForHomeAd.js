@@ -57,12 +57,12 @@ if (url.includes("/pageServiceCardByGroupCode")) {
     console.log(obj.data)
 }
 
-// 删除会员页面中“花珑珠”
+// 删除会员页面中“花珑珠”和“公益”
 if (url.includes("/pageConfig")) {
     if (obj?.data?.components?.length > 0) {
         const orignalData = { ...obj.data };
         if (Array.isArray(orignalData.components)){
-            orignalData.components = orignalData.components.filter(item => item?.componentType !== "expendLongZhu" && item?.componentType === "Banner");
+            orignalData.components = orignalData.components.filter(item => item?.componentType !== "expendLongZhu" && item?.componentType !== "Banner");
         }
 
         obj.data = {

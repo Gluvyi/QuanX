@@ -29,7 +29,7 @@ if (url.includes(urlSuffix + "/navigation")) {
 if (url.includes("/getPageData/C4home")) {
     if (obj?.data?.components?.length > 0) {
         if (Array.isArray(obj.data.components)){
-            obj.data.components = obj.data.components(item => item?.componentType === "MiniCard");
+            obj.data.components = obj.data.components.filter(item => item?.componentType === "MiniCard");
         }
     }
     console.log(obj.data.components)

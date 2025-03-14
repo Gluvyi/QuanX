@@ -13,4 +13,4 @@ if (url.includes("/supera/C4/v1_11_0/publicApi/nav/query/app")) {
     }
 }
 
-$done({ body: JSON.stringify(jsonData) });
+$done({ body: JSON.stringify(obj) });

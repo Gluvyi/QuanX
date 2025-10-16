@@ -138,14 +138,14 @@ async function getLotteryActivityInfo(user) {
             url: "https://gw2c-hw-open.longfor.com/llt-gateway-prod/api/v1/page/info",
             headers: {
                 'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_8 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.48(0x18003029) NetType/4G Language/zh_CN miniProgram/wx50282644351869da',
-                'Origin': 'https://longzhu.longfor.com',
-                'Referer': 'https://longzhu.longfor.com/',
-                'x-gaia-api-key': 'd1eb973c-64ec-4dbe-b23b-22c8117c4e8e',
+                'Origin': user['origin-lottery'],
+                'Referer': user['referer-lottery'],
+                'x-gaia-api-key': user['x-gaia-api-key-lottery'],
                 'bucode': user['x-lf-bu-code'],
-                'authtoken': user.token,
+                'authtoken': user['token'],
                 'channel': user['x-lf-channel'],
                 'Content-Type': 'application/json',
-                'Cookie': user.cookie
+                'Cookie': user['cookie']
             },
             type: 'get',
             dataType: "json",

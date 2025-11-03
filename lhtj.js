@@ -41,8 +41,8 @@ const baseUrl = "";
 const _headers = {};
 
 const LOTTERY_CONFIG = {
-  componentNo: "CW14Q15G29N9XGEK",
-  activityNo: "AP25A092888WHW70",
+  componentNo: "CY11Z39U03D7BWLF",
+  activityNo: "AP253103P1Z9CTCG",
   componentNo_APP: "CO11336N1003YDLZ",
   activityNo_APP: "AP25S103D1UP0D95",
   signEndpoint:

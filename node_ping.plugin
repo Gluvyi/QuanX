@@ -1,7 +1,7 @@
 [Argument]
 node_name = input,"",tag=节点名称,desc=填写Loon中准确的节点名称
-interval = select,"*/5 * * * *","*/3 * * * *","* * * * *",tag=探测频率,desc=每5分钟/每3分钟/每1分钟
+# interval = select,"*/5 * * * *","*/3 * * * *","* * * * *",tag=探测频率,desc=每5分钟/每3分钟/每1分钟
 timeout_ms = input,"4000",tag=HTTP超时(ms)
 
 [Script]
-cron "{interval}" script-path=https://raw.githubusercontent.com/Gluvyi/QuanX/refs/heads/main/node_ping.js, tag=指定节点探活, timeout=20, enable=true, argument="node={node_name}&timeout={timeout_ms}"
+cron "*/5 * * * *" script-path=https://raw.githubusercontent.com/Gluvyi/QuanX/refs/heads/main/node_ping.js, tag=指定节点探活, timeout=20, enable=true, argument="node={node_name}&timeout={timeout_ms}"

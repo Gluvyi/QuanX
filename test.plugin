@@ -1,0 +1,5 @@
+#!name=节点探活测试
+#!desc=测试Loon定时脚本
+
+[Script]
+cron "*/1 * * * *" script-path=https://raw.githubusercontent.com/Gluvyi/QuanX/refs/heads/main/node_ping.js, timeout=20, tag=指定节点探活

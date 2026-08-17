@@ -1,6 +1,6 @@
 [Argument]
-node_name = input,"",tag=节点名称,desc=填Loon里准确的节点名(含emoji/空格)
-interval = select,"*/5 * * * *","*/3 * * * *","0 * * * *",tag=探测频率,desc=cron表达式
+node_name = input,"",tag=节点名称,desc=填写Loon中准确的节点名称
+interval = select,"*/5 * * * *","*/3 * * * *","* * * * *",tag=探测频率,desc=每5分钟/每3分钟/每1分钟
 timeout_ms = input,"4000",tag=HTTP超时(ms)
 
 [Script]
